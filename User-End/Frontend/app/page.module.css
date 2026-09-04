@@ -1,0 +1,543 @@
+.pageShell {
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px 12px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  background: #f3f3f3;
+}
+
+.formCard {
+  width: min(760px, 100%);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(148, 92, 136, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(61, 16, 83, 0.08);
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.headerBanner {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 52%, var(--dark-accent) 100%);
+  padding: 14px 18px;
+}
+
+.headerBanner h1 {
+  margin: 0;
+  color: white;
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.form {
+  padding: 14px 18px 10px;
+}
+
+.section {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0e5f2;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: inline-block;
+  padding: 7px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(173, 83, 137, 0.12), rgba(117, 49, 110, 0.18));
+  color: var(--dark-accent);
+  border: 1px solid rgba(117, 49, 110, 0.22);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.fieldGridSingle,
+.fieldGridFour,
+.fieldGridTwo {
+  display: grid;
+  gap: 12px;
+}
+
+.fieldGridSingle {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.fieldGridFour {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.fieldWrap input,
+.fieldWrap select,
+.fieldWrap textarea {
+  min-height: 40px;
+}
+
+.fieldGridTwo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fieldWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text);
+  font-weight: 600;
+  min-width: 0;
+}
+
+.fieldWrap span {
+  font-size: 0.8rem;
+  color: var(--dark-accent);
+}
+
+.fieldWrap input,
+.fieldWrap select,
+.fieldWrap textarea {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid rgba(144, 120, 145, 0.38);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fieldWrap textarea {
+  min-height: 65px;
+  resize: vertical;
+}
+
+.fieldWrap input:focus,
+.fieldWrap select:focus,
+.fieldWrap textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(173, 83, 137, 0.14);
+}
+
+.fieldWrap small {
+  color: var(--error);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.inputError {
+  border-color: rgba(198, 65, 65, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(198, 65, 65, 0.08) !important;
+}
+
+.applicationTypeNote {
+  margin: 6px 0 12px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--primary);
+  background: rgba(173, 83, 137, 0.08);
+  color: var(--dark-accent);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.loadingText,
+.emptyState {
+  color: var(--muted);
+  background: #f9f5fb;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-size: 0.86rem;
+}
+
+.documentTableWrap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  margin: 10px 0;
+}
+
+.documentTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.documentTable th,
+.documentTable td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1e3f0;
+  vertical-align: middle;
+  word-break: break-word;
+  font-size: 0.86rem;
+}
+
+.documentTable th:first-child,
+.documentTable td:first-child {
+  width: 70px;
+  max-width: 70px;
+  text-align: center;
+}
+
+.documentTable thead th {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 8px;
+}
+
+.documentTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.documentTable input[type="file"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 8px;
+  font-size: 0.8rem;
+}
+
+.errorMessage {
+  margin-top: 8px;
+  color: var(--error);
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: rgba(198, 65, 65, 0.06);
+  border: 1px solid rgba(198, 65, 65, 0.2);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.statusMessage {
+  margin-top: 8px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  background: rgba(29, 122, 77, 0.1);
+  border: 1px solid rgba(29, 122, 77, 0.2);
+  color: var(--success);
+}
+
+.successScreen {
+  padding: 28px 16px 22px;
+}
+
+.successCard {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(29, 122, 77, 0.05), rgba(173, 83, 137, 0.04));
+  border: 1px solid rgba(29, 122, 77, 0.18);
+  border-radius: 18px;
+  padding: 28px 22px;
+  box-shadow: 0 12px 28px rgba(61, 16, 83, 0.08);
+}
+
+.successBadge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(29, 122, 77, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(29, 122, 77, 0.2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.successCard h2 {
+  margin: 16px 0 10px;
+  color: var(--dark-accent);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.applicationNumber {
+  margin: 12px auto 14px;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  box-shadow: 0 14px 24px rgba(117, 49, 110, 0.18);
+}
+
+.successText {
+  margin: 0 0 20px;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.newApplicationButton {
+  border: none;
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 0 18px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: white;
+  box-shadow: 0 12px 20px rgba(117, 49, 110, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newApplicationButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 24px rgba(117, 49, 110, 0.24);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.submitButton,
+.resetButton {
+  border: none;
+  border-radius: 8px;
+  min-height: 36px;
+  padding: 0 16px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submitButton {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: white;
+  box-shadow: 0 12px 20px rgba(117, 49, 110, 0.2);
+}
+
+.resetButton {
+  background: rgba(173, 83, 137, 0.08);
+  color: var(--dark-accent);
+  border: 1px solid rgba(117, 49, 110, 0.2);
+}
+
+.submitButton:hover,
+.resetButton:hover {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Step Progress Indicator Styles */
+.stepProgress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 14px 14px 10px;
+  background: linear-gradient(90deg, rgba(173, 83, 137, 0.04), rgba(117, 49, 110, 0.06));
+  border-bottom: 1px solid rgba(173, 83, 137, 0.1);
+}
+
+.stepIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 92px;
+}
+
+.stepNumber {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 2px solid rgba(173, 83, 137, 0.3);
+  color: rgba(117, 49, 110, 0.5);
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.stepLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(117, 49, 110, 0.6);
+  text-align: center;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+}
+
+.stepActive .stepNumber {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: white;
+  border-color: rgba(117, 49, 110, 0.3);
+  box-shadow: 0 6px 12px rgba(117, 49, 110, 0.18);
+}
+
+.stepActive .stepLabel {
+  color: var(--dark-accent);
+  font-weight: 700;
+}
+
+.stepConnector {
+  width: 52px;
+  height: 2px;
+  background: rgba(173, 83, 137, 0.3);
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+/* Navigation Buttons */
+.nextButton,
+.previousButton {
+  border: none;
+  border-radius: 8px;
+  min-height: 36px;
+  padding: 0 18px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.nextButton {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--dark-accent));
+  color: white;
+  box-shadow: 0 12px 20px rgba(117, 49, 110, 0.2);
+}
+
+.previousButton {
+  background: rgba(173, 83, 137, 0.08);
+  color: var(--dark-accent);
+  border: 1px solid rgba(117, 49, 110, 0.2);
+}
+
+.nextButton:hover,
+.previousButton:hover {
+  transform: translateY(-1px);
+}
+
+.nextButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 980px) {
+  .fieldGridFour {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stepConnector {
+    width: 40px;
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .fieldGridFour,
+  .fieldGridTwo {
+    grid-template-columns: 1fr;
+  }
+
+  .documentTable,
+  .documentTable thead,
+  .documentTable tbody,
+  .documentTable tr,
+  .documentTable th,
+  .documentTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .documentTable thead {
+    display: none;
+  }
+
+  .documentTable tbody tr {
+    border-bottom: 1px solid #f1e3f0;
+    padding: 8px 0;
+  }
+
+  .documentTable td {
+    border: none;
+    padding: 6px 12px;
+  }
+
+  .buttonRow {
+    flex-direction: column-reverse;
+  }
+
+  .submitButton,
+  .resetButton,
+  .nextButton,
+  .previousButton {
+    width: 100%;
+  }
+
+  .stepProgress {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 12px;
+  }
+
+  .stepIndicator {
+    flex: 0 0 calc(50% - 8px);
+    min-width: 0;
+  }
+
+  .stepConnector {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    order: 3;
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageShell {
+    padding: 18px 12px 40px;
+  }
+
+  .headerBanner {
+    padding: 18px 20px;
+  }
+
+  .form {
+    padding: 20px 16px 14px;
+  }
+
+  .fieldGridFour,
+  .fieldGridTwo {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonRow {
+    flex-direction: column-reverse;
+  }
+
+  .submitButton,
+  .resetButton {
+    width: 100%;
+  }
+}

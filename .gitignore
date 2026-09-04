@@ -1,0 +1,56 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and workspace files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.user
+*.suo
+
+# .NET build output and local files
+**/bin/
+**/obj/
+**/publish/
+*.userprefs
+*.rsuser
+*.nupkg
+
+# ASP.NET local configuration
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.*.local.json
+
+# Runtime data and local uploads
+**/Uploads/
+**/logs/
+*.log
+
+# Node.js dependencies and build output
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/coverage/
+**/.turbo/
+**/.vercel/
+
+# Environment files and local secrets
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+
+# Package manager and TypeScript artifacts
+**/.pnp
+**/.pnp.*
+**/.yarn/
+**/*.tsbuildinfo
+
+# npm/yarn/pnpm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

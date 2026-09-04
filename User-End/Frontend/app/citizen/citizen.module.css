@@ -1,0 +1,71 @@
+.shell {
+  min-height: 100vh;
+  background: #edf5f3;
+  color: #173b3a;
+}
+
+.topbar {
+  background: #123f3c;
+  color: #f5fbf8;
+  padding: 18px max(20px, calc((100vw - 1180px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 700; }
+.brand span { display: block; color: #f5b884; font: 0.72rem Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.nav a { color: #d8eee7; text-decoration: none; padding: 8px 10px; border-radius: 6px; }
+.nav a:hover { background: #235b55; }
+
+.content { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 42px 0 64px; }
+.eyebrow { color: #b85c38; font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.content h1, .content h2, .content h3 { font-family: Georgia, serif; color: #123f3c; }
+.content h1 { margin: 8px 0 10px; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.04; }
+.content h2 { margin-top: 0; }
+.lede { color: #52716d; max-width: 680px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+.card { background: #fff; border: 1px solid #d2e3de; border-radius: 8px; padding: 20px; box-shadow: 0 10px 30px rgba(18, 63, 60, .07); }
+.card h3 { margin: 0 0 8px; }
+.card p { color: #627c78; margin: 0; }
+.cardLink { display: inline-block; margin-top: 18px; color: #b85c38; font-weight: 800; text-decoration: none; }
+.tableWrap { overflow-x: auto; margin-top: 18px; }
+.tableWrap table { width: 100%; border-collapse: collapse; background: #fff; }
+.tableWrap th, .tableWrap td { padding: 13px 14px; border-bottom: 1px solid #e1ece9; text-align: left; white-space: nowrap; }
+.tableWrap th { background: #dcece7; color: #21514c; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.status { display: inline-block; padding: 5px 9px; border-radius: 999px; background: #e6f3ee; color: #23725b; font-size: .78rem; font-weight: 800; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0; }
+.button, .buttonSecondary { border: 0; border-radius: 6px; padding: 12px 16px; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; }
+.button { background: #b85c38; color: white; }
+.buttonSecondary { background: #dcece7; color: #174b46; }
+.button:disabled { opacity: .6; cursor: wait; }
+.formGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.formGrid .wide { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+.field input, .field select, .field textarea { border: 1px solid #bfd5cf; border-radius: 6px; padding: 11px; color: #173b3a; background: white; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid #c9e8de; border-color: #398476; }
+.error { color: #a43d2b; font-size: .84rem; font-weight: 700; }
+.alert { background: #fff3ec; border: 1px solid #efc7b5; color: #8d3e29; padding: 12px 14px; border-radius: 6px; margin: 16px 0; }
+.progress { display: flex; gap: 6px; margin: 22px 0; overflow-x: auto; }
+.progress span { flex: 1; min-width: 110px; padding: 10px; background: #dce8e5; color: #5e7773; text-align: center; font-weight: 800; font-size: .8rem; }
+.progress .active { background: #276b63; color: white; }
+.uploadList { display: grid; gap: 10px; }
+.uploadRow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px; border: 1px solid #d2e3de; border-radius: 6px; }
+.photoGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.photoCard { border: 1px solid #d2e3de; border-radius: 6px; overflow: hidden; background: #f8fcfb; }
+.photoCard img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.photoCard div { padding: 10px; display: flex; justify-content: space-between; gap: 8px; }
+.detailGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.detailGrid dt { color: #67817d; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+.detailGrid dd { margin: 2px 0 8px; font-weight: 700; }
+.loading { color: #52716d; padding: 30px 0; }
+
+@media (max-width: 720px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .content { width: min(100% - 24px, 1180px); padding-top: 28px; }
+  .grid, .formGrid, .detailGrid { grid-template-columns: 1fr; }
+  .formGrid .wide { grid-column: auto; }
+  .uploadRow { align-items: flex-start; flex-direction: column; }
+}
