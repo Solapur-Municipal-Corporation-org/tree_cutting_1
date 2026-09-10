@@ -309,6 +309,7 @@ public static class DatabaseBootstrap
 
             if (missingTables.Count > 0)
             {
+                context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
             }
 
@@ -324,6 +325,7 @@ public static class DatabaseBootstrap
         }
         catch
         {
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             SeedData.Initialize(context);
         }
